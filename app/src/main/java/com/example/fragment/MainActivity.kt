@@ -7,7 +7,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        supportFragmentManager.beginTransaction().replace(android.R.id.content, MainFragment()).commit()
+        intent.extras?.getString("token")
+        val bundle = Bundle()
+        bundle.putString("token", "ewioghowhgiw")
+
+        MainFragment.getNewInstance(args = bundle)
+
+
+//        supportFragmentManager.beginTransaction().replace(android.R.id.content, MainFragment()).commit()
 
     }
 }
